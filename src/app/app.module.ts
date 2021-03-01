@@ -29,6 +29,8 @@ import { TestimonialsComponent } from './components/Testimonials/testimonials.co
 import { Experience_itemComponent } from './components/Experience_item/experience_item.component';
 import { BlugerComponent } from './components/Bluger/bluger.component';
 import { PublisherComponent } from './components/Publisher/publisher.component';
+import { SocialmediaComponent } from './components/Socialmedia/socialmedia.component';
+import { PersonalComponent } from './components/Personal/personal.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,7 +50,9 @@ export function createTranslateLoader(http: HttpClient) {
     TestimonialsComponent,
     Experience_itemComponent,
     BlugerComponent,
-    PublisherComponent
+    PublisherComponent,
+    PersonalComponent,
+    SocialmediaComponent
   ],
   entryComponents: [
     DeleteConfirmationComponent

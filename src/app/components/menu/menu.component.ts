@@ -22,6 +22,18 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
 
     let m = new menumodel();
+    m.fa_icon = 'fa fa-cogs';
+    m.title = 'General';
+    m.route = 'personal';
+    this.entries.push(m);
+
+     m = new menumodel();
+    m.fa_icon = 'fa fa-share-alt';
+    m.title = 'Social Media';
+    m.route = 'sicialmedia';
+    this.entries.push(m);
+
+    m = new menumodel();
     m.fa_icon = 'fa fa-free-code-camp';
     m.title = 'Skills';
     m.route = 'skills';

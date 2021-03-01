@@ -339,6 +339,34 @@ const options = { headers: headers };
 return this.api.post<Result_Edit_Socialmedia>(this.url, JSON.stringify(i_Socialmedia), options)
 .pipe(map(response => { this.common.Handle_Exception(response.ExceptionMsg); return response.My_Socialmedia;}));
 }
+Get_Personal_By_PERSONAL_ID(i_Params_Get_Personal_By_PERSONAL_ID: Params_Get_Personal_By_PERSONAL_ID) : Observable<Personal> {
+this.url = this.APIBaseUrl + '/Get_Personal_By_PERSONAL_ID?Ticket=' + this.common.ticket;
+const headers = new HttpHeaders({ 'Content-Type': 'application/json','ticket': this.common.ticket });
+const options = { headers: headers };
+return this.api.post<Result_Get_Personal_By_PERSONAL_ID>(this.url, JSON.stringify(i_Params_Get_Personal_By_PERSONAL_ID), options)
+.pipe(map(response => { this.common.Handle_Exception(response.ExceptionMsg); return response.My_Result;}));
+}
+Get_Personal_By_OWNER_ID(i_Params_Get_Personal_By_OWNER_ID: Params_Get_Personal_By_OWNER_ID) : Observable<Personal[]> {
+this.url = this.APIBaseUrl + '/Get_Personal_By_OWNER_ID?Ticket=' + this.common.ticket;
+const headers = new HttpHeaders({ 'Content-Type': 'application/json','ticket': this.common.ticket });
+const options = { headers: headers };
+return this.api.post<Result_Get_Personal_By_OWNER_ID>(this.url, JSON.stringify(i_Params_Get_Personal_By_OWNER_ID), options)
+.pipe(map(response => { this.common.Handle_Exception(response.ExceptionMsg); return response.My_Result;}));
+}
+Get_Personal_By_Where(i_Params_Get_Personal_By_Where: Params_Get_Personal_By_Where) : Observable<Personal[]> {
+this.url = this.APIBaseUrl + '/Get_Personal_By_Where?Ticket=' + this.common.ticket;
+const headers = new HttpHeaders({ 'Content-Type': 'application/json','ticket': this.common.ticket });
+const options = { headers: headers };
+return this.api.post<Result_Get_Personal_By_Where>(this.url, JSON.stringify(i_Params_Get_Personal_By_Where), options)
+.pipe(map(response => { this.common.Handle_Exception(response.ExceptionMsg); return response.My_Result;}));
+}
+Edit_Personal(i_Personal: Personal) : Observable<Personal> {
+this.url = this.APIBaseUrl + '/Edit_Personal?Ticket=' + this.common.ticket;
+const headers = new HttpHeaders({ 'Content-Type': 'application/json','ticket': this.common.ticket });
+const options = { headers: headers };
+return this.api.post<Result_Edit_Personal>(this.url, JSON.stringify(i_Personal), options)
+.pipe(map(response => { this.common.Handle_Exception(response.ExceptionMsg); return response.My_Personal;}));
+}
 Authenticate(i_Params_Authenticate: Params_Authenticate) : Observable<User> {
 this.url = this.APIBaseUrl + '/Authenticate?Ticket=' + this.common.ticket;
 const headers = new HttpHeaders({ 'Content-Type': 'application/json','ticket': this.common.ticket });
@@ -714,6 +742,70 @@ export class Params_Delete_Socialmedia
 {
 SOCIALMEDIA_ID?: number;
 }
+export class Params_Get_Personal_By_PERSONAL_ID
+{
+PERSONAL_ID?: number;
+}
+export class Personal
+{
+PERSONAL_ID?: number;
+NAME: string;
+PHONE: string;
+EMAIL: string;
+WEBSITE: string;
+DEGREE: string;
+ADDRESS: string;
+HOME_DESCRIPTION: string;
+ABOUT_DESCRIPTION: string;
+SKILLS_DESCRIPTION: string;
+FACTS_DESCRIPTION: string;
+TESTIMONTION_DESCRIPTION: string;
+JOB_TITLE: string;
+JOB_DESCRIPTION: string;
+ABOUT_SUMARY: string;
+RESUME_DESCRIPTION: string;
+RESUME_SUMARY: string;
+PUBLISHER_DESCRIPTION: string;
+GALLARY_DESCRIPTION: string;
+BLUGER_DESCRIPTION: string;
+CONTACT_DESCRIPTION: string;
+CONTACT_LOCATION: string;
+ENTRY_USER_ID?: number;
+ENTRY_DATE: string;
+OWNER_ID?: number;
+}
+export class Params_Get_Personal_By_OWNER_ID
+{
+OWNER_ID?: number;
+}
+export class Params_Get_Personal_By_Where
+{
+OWNER_ID?: number;
+NAME: string;
+PHONE: string;
+EMAIL: string;
+WEBSITE: string;
+DEGREE: string;
+ADDRESS: string;
+HOME_DESCRIPTION: string;
+ABOUT_DESCRIPTION: string;
+SKILLS_DESCRIPTION: string;
+FACTS_DESCRIPTION: string;
+TESTIMONTION_DESCRIPTION: string;
+JOB_TITLE: string;
+JOB_DESCRIPTION: string;
+ABOUT_SUMARY: string;
+RESUME_DESCRIPTION: string;
+RESUME_SUMARY: string;
+PUBLISHER_DESCRIPTION: string;
+GALLARY_DESCRIPTION: string;
+BLUGER_DESCRIPTION: string;
+CONTACT_DESCRIPTION: string;
+CONTACT_LOCATION: string;
+START_ROW?: number;
+END_ROW?: number;
+TOTAL_COUNT?: number;
+}
 export class Params_Authenticate
 {
 UserName: string;
@@ -910,6 +1002,21 @@ My_Params_Delete_Socialmedia : Params_Delete_Socialmedia;
 }
 export class Result_Edit_Socialmedia extends Action_Result {
 My_Socialmedia : Socialmedia;
+}
+export class Result_Get_Personal_By_PERSONAL_ID extends Action_Result {
+My_Result : Personal;
+My_Params_Get_Personal_By_PERSONAL_ID : Params_Get_Personal_By_PERSONAL_ID;
+}
+export class Result_Get_Personal_By_OWNER_ID extends Action_Result {
+My_Result : Personal[];
+My_Params_Get_Personal_By_OWNER_ID : Params_Get_Personal_By_OWNER_ID;
+}
+export class Result_Get_Personal_By_Where extends Action_Result {
+My_Result : Personal[];
+My_Params_Get_Personal_By_Where : Params_Get_Personal_By_Where;
+}
+export class Result_Edit_Personal extends Action_Result {
+My_Personal : Personal;
 }
 export class Result_Authenticate extends Action_Result {
 My_Result : User;

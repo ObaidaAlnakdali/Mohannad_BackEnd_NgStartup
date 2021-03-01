@@ -1,0 +1,151 @@
+<div class="container padding container_actions">
+  <div class="d-flex justify-content-between">
+    <div>
+      <button type="button" class="btn btn-outline-info" (click)='goBack()'>
+        <span class="fa fa-arrow-left"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <h1>Personal</h1>
+</div>
+
+<div class="container" (scrolled)="onScroll()" infiniteScroll [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="300">
+  <div class='row'>
+    <div class="col col-lg-12" *ngFor='let entry of data'>
+      <div class="container entry_section">
+        <form fxLayout='column' #f="ngForm">
+
+          <h3>General</h3>
+          <mat-form-field>
+            <input matInput placeholder="Name" type="text" name="NAME" [(ngModel)]="entry.NAME" required />
+            <mat-error>Name is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Phone" type="text" name="PHONE" [(ngModel)]="entry.PHONE" required />
+            <mat-error>Phone is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email" type="text" name="EMAIL" [(ngModel)]="entry.EMAIL" required />
+            <mat-error>Email is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Website" type="text" name="WEBSITE" [(ngModel)]="entry.WEBSITE" required />
+            <mat-error>Website is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Degree" type="text" name="DEGREE" [(ngModel)]="entry.DEGREE" required />
+            <mat-error>Degree is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Address" type="text" name="ADDRESS" [(ngModel)]="entry.ADDRESS" required />
+            <mat-error>Address is required</mat-error>
+          </mat-form-field>
+
+          <h3>Home</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="HOME_DESCRIPTION" placeholder="Home Description" rows="3"
+              [(ngModel)]="entry.HOME_DESCRIPTION" required></textarea>
+            <mat-error>Home Description is required</mat-error>
+          </mat-form-field>
+
+          <h3>About</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="JOB_TITLE" placeholder="Job Title" rows="3"
+              [(ngModel)]="entry.JOB_TITLE" required></textarea>
+            <mat-error>Job Title is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="JOB_DESCRIPTION" placeholder="Job Description" rows="3"
+              [(ngModel)]="entry.JOB_DESCRIPTION" required></textarea>
+            <mat-error>Job Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="ABOUT_SUMARY" placeholder="About Sumary" rows="3"
+              [(ngModel)]="entry.ABOUT_SUMARY" required></textarea>
+            <mat-error>About Sumary is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="ABOUT_DESCRIPTION" placeholder="About Description" rows="3"
+              [(ngModel)]="entry.ABOUT_DESCRIPTION" required></textarea>
+            <mat-error>About Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="SKILLS_DESCRIPTION" placeholder="Skills Description" rows="3"
+              [(ngModel)]="entry.SKILLS_DESCRIPTION" required></textarea>
+            <mat-error>Skills Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="FACTS_DESCRIPTION" placeholder="Facts Description" rows="3"
+              [(ngModel)]="entry.FACTS_DESCRIPTION" required></textarea>
+            <mat-error>Facts Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="TESTIMONTION_DESCRIPTION"
+              placeholder="Testimontion Description" rows="3" [(ngModel)]="entry.TESTIMONTION_DESCRIPTION"
+              required></textarea>
+            <mat-error>Testimontion Description is required</mat-error>
+          </mat-form-field>
+
+          <h3>Resume</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="RESUME_DESCRIPTION" placeholder="Resume Description" rows="3"
+              [(ngModel)]="entry.RESUME_DESCRIPTION" required></textarea>
+            <mat-error>Resume Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="RESUME_SUMARY" placeholder="Resume Sumary" rows="3"
+              [(ngModel)]="entry.RESUME_SUMARY" required></textarea>
+            <mat-error>Resume Sumary is required</mat-error>
+          </mat-form-field>
+
+          <h3>Publisher</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="PUBLISHER_DESCRIPTION" placeholder="Publisher Description"
+              rows="3" [(ngModel)]="entry.PUBLISHER_DESCRIPTION" required></textarea>
+            <mat-error>Publisher Description is required</mat-error>
+          </mat-form-field>
+
+          <h3>Gallary</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="GALLARY_DESCRIPTION" placeholder="Gallary Description" rows="3"
+              [(ngModel)]="entry.GALLARY_DESCRIPTION" required></textarea>
+            <mat-error>Gallary Description is required</mat-error>
+          </mat-form-field>
+
+          <h3>Bluger</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="BLUGER_DESCRIPTION" placeholder="Bluger Description" rows="3"
+              [(ngModel)]="entry.BLUGER_DESCRIPTION" required></textarea>
+            <mat-error>Bluger Description is required</mat-error>
+          </mat-form-field>
+
+          <h3>Contact</h3>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="CONTACT_DESCRIPTION" placeholder="Contact Description" rows="3"
+              [(ngModel)]="entry.CONTACT_DESCRIPTION" required></textarea>
+            <mat-error>Contact Description is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matTextareaAutosize matInput name="CONTACT_LOCATION" placeholder="Contact Location" rows="3"
+              [(ngModel)]="entry.CONTACT_LOCATION" required></textarea>
+            <mat-error>Contact Location is required</mat-error>
+          </mat-form-field>
+
+          <div class="row">
+            <div class='col col-md-12'>
+              <button [disabled]='!f.valid' mat-raised-button color='primary' type="button"
+                class="btn btn-outline-secondary btn-block" (click)='Edit(entry)'>Save</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy  } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material';

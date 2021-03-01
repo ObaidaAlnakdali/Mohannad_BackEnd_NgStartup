@@ -11,6 +11,8 @@ import { TestimonialsComponent } from '../../components/Testimonials/testimonial
 import { Experience_itemComponent } from '../../components/Experience_item/experience_item.component';
 import { BlugerComponent } from '../../components/Bluger/bluger.component';
 import { PublisherComponent } from '../../components/Publisher/publisher.component';
+import { SocialmediaComponent } from '../../components/Socialmedia/socialmedia.component';
+import { PersonalComponent } from '../../components/Personal/personal.component';
 
 
 export const routes: Routes = [
@@ -23,6 +25,8 @@ export const routes: Routes = [
     {path: 'testimonials', component: TestimonialsComponent},
     {path: 'bluger', component:BlugerComponent},
     {path: 'publisher', component: PublisherComponent},
+    {path: 'sicialmedia', component: SocialmediaComponent},
+    {path: 'personal', component: PersonalComponent},
     {path: 'menu', component: MenuComponent, canActivate: [CanActivateThisRoute]},
     {path: '**', component: LoginComponent}
   ];
