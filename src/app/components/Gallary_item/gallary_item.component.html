@@ -2,20 +2,20 @@
     <div class="d-flex justify-content-between">
         <div>
             <button type="button" class="btn btn-outline-info" (click)='goBack()'>
-        <span class="fa fa-arrow-left"></span>
-      </button>
+<span class="fa fa-arrow-left"></span>
+</button>
         </div>
         <div>
             <div class="row">
                 <div class="col col-6">
                     <button type="button" class="btn btn-outline-warning" data-toggle="collapse" data-target="#searchDiv" aria-expanded="false" aria-controls="searchDiv">
-            <span class="fa fa-filter"></span>
-          </button>
+<span class="fa fa-filter"></span>
+</button>
                 </div>
                 <div class="col col-6">
                     <button type="button" class="btn btn-outline-success" (click)='AddEntry()'>
-            <span class="fa fa-plus"></span>
-          </button>
+<span class="fa fa-plus"></span>
+</button>
                 </div>
             </div>
         </div>
@@ -24,16 +24,28 @@
 <div id="searchDiv" class="collapse container search_criteria_section">
     <form fxLayout='column' #searchform="ngForm">
         <mat-form-field>
+            <input matInput placeholder="Title" type="text" name="TITLE" [(ngModel)]="searchModel.TITLE" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Title Ar" type="text" name="TITLE_AR" [(ngModel)]="searchModel.TITLE_AR" />
+        </mat-form-field>
+        <mat-form-field>
             <input matInput placeholder="Name" type="text" name="NAME" [(ngModel)]="searchModel.NAME" />
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Name Ar" type="text" name="NAME_AR" [(ngModel)]="searchModel.NAME_AR" />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Title" type="text" name="TITLE" [(ngModel)]="searchModel.TITLE" />
+            <input matInput placeholder="Category" type="text" name="CATEGORY" [(ngModel)]="searchModel.CATEGORY" />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Title Ar" type="text" name="TITLE_AR" [(ngModel)]="searchModel.TITLE_AR" />
+            <input matInput placeholder="Category Ar" type="text" name="CATEGORY_AR" [(ngModel)]="searchModel.CATEGORY_AR" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="date" placeholder="Projectdate" name="PROJECTDATE" [(ngModel)]="searchModel.PROJECTDATE" />
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matTextareaAutosize matInput name="PROJECTURL" placeholder="Projecturl" rows="3" [(ngModel)]="searchModel.PROJECTURL"></textarea>
         </mat-form-field>
         <mat-form-field>
             <textarea matTextareaAutosize matInput name="DESCRIPTION" placeholder="Description" rows="3" [(ngModel)]="searchModel.DESCRIPTION"></textarea>
@@ -52,17 +64,9 @@
     <div class='row'>
         <div *ngFor='let entry of data'>
             <div class="row">
-                <div class="col col-lg-9">
+                <div class="col col-lg-6">
                     <div class="container entry_section">
                         <form fxLayout='column' #f="ngForm">
-                            <mat-form-field>
-                                <input matInput placeholder="Name" type="text" name="NAME" [(ngModel)]="entry.NAME" required />
-                                <mat-error>Name is required</mat-error>
-                            </mat-form-field>
-                            <mat-form-field>
-                                <input matInput placeholder="Name Ar" type="text" name="NAME_AR" [(ngModel)]="entry.NAME_AR" required />
-                                <mat-error>Name Ar is required</mat-error>
-                            </mat-form-field>
                             <mat-form-field>
                                 <input matInput placeholder="Title" type="text" name="TITLE" [(ngModel)]="entry.TITLE" required />
                                 <mat-error>Title is required</mat-error>
@@ -72,6 +76,30 @@
                                 <mat-error>Title Ar is required</mat-error>
                             </mat-form-field>
                             <mat-form-field>
+                                <input matInput placeholder="Name" type="text" name="NAME" [(ngModel)]="entry.NAME" required />
+                                <mat-error>Name is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Name Ar" type="text" name="NAME_AR" [(ngModel)]="entry.NAME_AR" required />
+                                <mat-error>Name Ar is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Category" type="text" name="CATEGORY" [(ngModel)]="entry.CATEGORY" required />
+                                <mat-error>Category is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Category Ar" type="text" name="CATEGORY_AR" [(ngModel)]="entry.CATEGORY_AR" required />
+                                <mat-error>Category Ar is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput type="date" placeholder="Projectdate" name="PROJECTDATE" [(ngModel)]="entry.PROJECTDATE" required />
+                                <mat-error>Projectdate is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <textarea matTextareaAutosize matInput name="PROJECTURL" placeholder="Projecturl" rows="3" [(ngModel)]="entry.PROJECTURL" required></textarea>
+                                <mat-error>Projecturl is required</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
                                 <textarea matTextareaAutosize matInput name="DESCRIPTION" placeholder="Description" rows="3" [(ngModel)]="entry.DESCRIPTION" required></textarea>
                                 <mat-error>Description is required</mat-error>
                             </mat-form-field>
@@ -79,7 +107,12 @@
                                 <textarea matTextareaAutosize matInput name="DESCRIPTION_AR" placeholder="Description Ar" rows="3" [(ngModel)]="entry.DESCRIPTION_AR" required></textarea>
                                 <mat-error>Description Ar is required</mat-error>
                             </mat-form-field>
-                            <mat-checkbox color="primary" name="ACTIVE" [(ngModel)]="entry.ACTIVE">Active</mat-checkbox>
+                            <mat-form-field>
+                                <mat-select placeholder="Gallary" [(value)]='entry.GALLARY_ID'>
+                                    <mat-option>Choose</mat-option>
+                                    <mat-option *ngFor='let GallaryEntry of GallaryList' [value]='GallaryEntry.GALLARY_ID'>{{GallaryEntry.TITLE}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
                             <div class="row">
                                 <div class='col col-md-6'>
                                     <button [disabled]='!f.valid' mat-raised-button color='primary' type="button" class="btn btn-outline-secondary btn-block" (click)='Edit(entry)'>Save</button>
@@ -91,10 +124,10 @@
                         </form>
                     </div>
                 </div>
-                <div class='col col-lg-3'>
-                    <mat-tab-group dynamicHeight="true" *ngIf='entry.TESTIMONIALS_ID != -1'>
+                <div class='col col-lg-6'>
+                    <mat-tab-group dynamicHeight="true" *ngIf='entry.GALLARY_ITEM_ID != -1'>
                         <mat-tab label="Images">
-                            <image-upload *ngIf='entry.TESTIMONIALS_ID != -1' [url]="entry.MyURL" [uploadedFiles]="entry.MyUploadedImages" (removed)="onRemoved($event)" (uploadFinished)="imageFinishedUploading($event)" (uploadStateChanged)="onUploadStateChanged($event)">
+                            <image-upload *ngIf='entry.GALLARY_ITEM_ID != -1' [url]="entry.MyURL" [uploadedFiles]="entry.MyUploadedImages" (removed)="onRemoved($event)" (uploadFinished)="imageFinishedUploading($event)" (uploadStateChanged)="onUploadStateChanged($event)">
                             </image-upload>
                         </mat-tab>
                     </mat-tab-group>

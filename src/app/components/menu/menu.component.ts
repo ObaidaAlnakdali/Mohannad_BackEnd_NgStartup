@@ -27,7 +27,13 @@ export class MenuComponent implements OnInit {
     m.route = 'personal';
     this.entries.push(m);
 
-     m = new menumodel();
+    m = new menumodel();
+    m.fa_icon = 'fa fa-share-alt';
+    m.title = 'Consulting services';
+    m.route = 'consulting';
+    this.entries.push(m);
+
+    m = new menumodel();
     m.fa_icon = 'fa fa-share-alt';
     m.title = 'Social Media';
     m.route = 'sicialmedia';
@@ -46,9 +52,21 @@ export class MenuComponent implements OnInit {
     this.entries.push(m);
 
     m = new menumodel();
+    m.fa_icon = 'fa fa-heartbeat';
+    m.title = 'Friendly Site';
+    m.route = 'friendlySite';
+    this.entries.push(m);
+
+    m = new menumodel();
     m.fa_icon = 'fa fa-book';
     m.title = 'Educations';
     m.route = 'educations';
+    this.entries.push(m);
+
+    m = new menumodel();
+    m.fa_icon = 'fa fa-book';
+    m.title = 'License & Certificate';
+    m.route = 'license';
     this.entries.push(m);
 
     m = new menumodel();
@@ -59,8 +77,20 @@ export class MenuComponent implements OnInit {
 
     m = new menumodel();
     m.fa_icon = 'fa fa-tasks';
-    m.title = 'Experience_Item';
+    m.title = 'Experience Item';
     m.route = 'experience_item';
+    this.entries.push(m);
+
+    m = new menumodel();
+    m.fa_icon = 'fa fa-image';
+    m.title = 'Gallary';
+    m.route = 'gallary';
+    this.entries.push(m);
+
+    m = new menumodel();
+    m.fa_icon = 'fa fa-sitemap';
+    m.title = 'Gallary Item';
+    m.route = 'gallaryItem';
     this.entries.push(m);
 
     m = new menumodel();
@@ -70,12 +100,30 @@ export class MenuComponent implements OnInit {
     this.entries.push(m);
 
     m = new menumodel();
+    m.fa_icon = 'fa fa-edit';
+    m.title = 'Bluger Category';
+    m.route = 'BlugerCategory';
+    this.entries.push(m);
+
+    m = new menumodel();
     m.fa_icon = 'fa fa-product-hunt';
     m.title = 'Publisher';
     m.route = 'publisher';
     this.entries.push(m);
 
+    m = new menumodel();
+    m.fa_icon = 'fa fa-star';
+    m.title = 'Chance';
+    m.route = 'chance';
+    this.entries.push(m);
 
+    m = new menumodel();
+    m.fa_icon = 'fa fa-star';
+    m.title = 'Courses';
+    m.route = 'courses';
+    this.entries.push(m);
+
+console.log(this.entries)
 
   }
 

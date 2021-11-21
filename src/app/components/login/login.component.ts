@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {}
+
   login() {
     //this.loading = true;
     const p = new Params_Authenticate();
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.proxy.Authenticate(p).subscribe((data : User)=>{
       if ((data.Ticket == null) || (data.Ticket == ''))
       {
-         alert("Unvalid User Name / Password");
+        alert("Unvalid User Name / Password");
       }
       else
       {

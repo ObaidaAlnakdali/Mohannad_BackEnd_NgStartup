@@ -31,6 +31,15 @@ import { BlugerComponent } from './components/Bluger/bluger.component';
 import { PublisherComponent } from './components/Publisher/publisher.component';
 import { SocialmediaComponent } from './components/Socialmedia/socialmedia.component';
 import { PersonalComponent } from './components/Personal/personal.component';
+import { GallaryComponent } from './components/Gallary/gallary.component';
+import { Gallary_itemComponent } from './components/Gallary_item/gallary_item.component';
+import { Friendly_sitesComponent } from './components/Friendly_sites/friendly_sites.component';
+import { ChanceComponent } from './components/Chance/Chance.component';
+import { Bluger_categoryComponent } from './components/Bluger_category/bluger_category.component';
+import { CoursesComponent } from './components/Courses/Courses.component';
+import { Consulting_servicesComponent } from './components/Consulting_services/consulting_services.component';
+import { LicenseComponent } from './components/License/license.component';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,6 +53,7 @@ export function createTranslateLoader(http: HttpClient) {
     DeleteConfirmationComponent,
     DirectionsMapDirective,
     MenuComponent,
+    PersonalComponent,
     SkillsComponent,
     EducationsComponent,
     ExperienceComponent,
@@ -51,8 +61,15 @@ export function createTranslateLoader(http: HttpClient) {
     Experience_itemComponent,
     BlugerComponent,
     PublisherComponent,
-    PersonalComponent,
-    SocialmediaComponent
+    SocialmediaComponent,
+    Gallary_itemComponent,
+    GallaryComponent,
+    Friendly_sitesComponent,
+    ChanceComponent,
+    Bluger_categoryComponent,
+    CoursesComponent,
+    LicenseComponent,
+    Consulting_servicesComponent
   ],
   entryComponents: [
     DeleteConfirmationComponent

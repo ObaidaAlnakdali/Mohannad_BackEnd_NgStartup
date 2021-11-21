@@ -29,19 +29,10 @@ aria-controls="searchDiv">
 <div id="searchDiv" class="collapse container search_criteria_section">
 <form fxLayout='column' #searchform="ngForm">
 <mat-form-field>
-<input matInput placeholder="Title" type="text"  name="TITLE" [(ngModel)]="searchModel.TITLE"  />
+<input matInput placeholder="Consulting Services En" type="text"  name="CONSULTING_SERVICES_EN" [(ngModel)]="searchModel.CONSULTING_SERVICES_EN"  />
 </mat-form-field>
 <mat-form-field>
-<input matInput placeholder="Title Ar" type="text"  name="TITLE_AR" [(ngModel)]="searchModel.TITLE_AR"  />
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="From To D" type="text"  name="FROM_TO_D" [(ngModel)]="searchModel.FROM_TO_D"  />
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="Name" type="text"  name="NAME" [(ngModel)]="searchModel.NAME"  />
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="Name Ar" type="text"  name="NAME_AR" [(ngModel)]="searchModel.NAME_AR"  />
+<input matInput placeholder="Consulting Services Ar" type="text"  name="CONSULTING_SERVICES_AR" [(ngModel)]="searchModel.CONSULTING_SERVICES_AR"  />
 </mat-form-field>
 <div class="row">
 <div class='col col-md-12'>
@@ -56,19 +47,10 @@ aria-controls="searchDiv">
 <div class="container entry_section">
 <form fxLayout='column' #f="ngForm">
 <mat-form-field>
-<input matInput placeholder="Title" type="text"  name="TITLE" [(ngModel)]="entry.TITLE" required /><mat-error>Title is required</mat-error>
+<input matInput placeholder="Consulting Services En" type="text"  name="CONSULTING_SERVICES_EN" [(ngModel)]="entry.CONSULTING_SERVICES_EN" required /><mat-error>Consulting Services En is required</mat-error>
 </mat-form-field>
 <mat-form-field>
-<input matInput placeholder="Title Ar" type="text"  name="TITLE_AR" [(ngModel)]="entry.TITLE_AR" required /><mat-error>Title Ar is required</mat-error>
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="From To D" type="text"  name="FROM_TO_D" [(ngModel)]="entry.FROM_TO_D" required /><mat-error>From To D is required</mat-error>
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="Name" type="text"  name="NAME" [(ngModel)]="entry.NAME" required /><mat-error>Name is required</mat-error>
-</mat-form-field>
-<mat-form-field>
-<input matInput placeholder="Name Ar" type="text"  name="NAME_AR" [(ngModel)]="entry.NAME_AR" required /><mat-error>Name Ar is required</mat-error>
+<input matInput placeholder="Consulting Services Ar" type="text"  name="CONSULTING_SERVICES_AR" [(ngModel)]="entry.CONSULTING_SERVICES_AR" required /><mat-error>Consulting Services Ar is required</mat-error>
 </mat-form-field>
 <mat-checkbox color="primary"  name="ACTIVE" [(ngModel)]="entry.ACTIVE">Active</mat-checkbox>
 <div class="row">

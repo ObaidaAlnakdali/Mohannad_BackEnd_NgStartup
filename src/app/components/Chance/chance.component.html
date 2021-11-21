@@ -1,0 +1,111 @@
+<div class="container padding container_actions">
+    <div class="d-flex justify-content-between">
+        <div>
+            <button type="button" class="btn btn-outline-info" (click)='goBack()'>
+        <span class="fa fa-arrow-left"></span>
+      </button>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col col-4">
+                    <a href="https://icons.getbootstrap.com/#icons" target="_blank">
+                        <button type="button" class="btn btn-outline-info">
+                      <span class="fa fa-search"></span>
+          </button>
+                    </a>
+                </div>
+                <div class="col col-4">
+                    <button type="button" class="btn btn-outline-warning" data-toggle="collapse" data-target="#searchDiv" aria-expanded="false" aria-controls="searchDiv">
+            <span class="fa fa-filter"></span>
+          </button>
+                </div>
+                <div class="col col-4">
+                    <button type="button" class="btn btn-outline-success" (click)='AddEntry()'>
+            <span class="fa fa-plus"></span>
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="searchDiv" class="collapse container search_criteria_section">
+    <form fxLayout='column' #searchform="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Title" type="text" name="TITLE" [(ngModel)]="searchModel.TITLE" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" type="text" name="DESCRIPTION" [(ngModel)]="searchModel.DESCRIPTION" />
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matTextareaAutosize matInput name="CONTENT" placeholder="Content" rows="3" [(ngModel)]="searchModel.CONTENT"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Chance Lang" type="text" name="CHANCE_LANG" [(ngModel)]="searchModel.CHANCE_LANG" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Type" type="text" name="TYPE" [(ngModel)]="searchModel.TYPE" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Icon" type="text" name="ICON" [(ngModel)]="searchModel.ICON" />
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matTextareaAutosize matInput name="LINK" placeholder="Link" rows="3" [(ngModel)]="searchModel.LINK"></textarea>
+        </mat-form-field>
+        <div class="row">
+            <div class='col col-md-12'>
+                <button [disabled]='!searchform.valid' mat-raised-button color='primary' type="button" class="btn btn-outline-secondary btn-block" (click)='ClearAndFetch()'>Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container" (scrolled)="onScroll()" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300">
+    <div class='row'>
+        <div class="col col-lg-4" *ngFor='let entry of data'>
+            <div class="container entry_section">
+                <form fxLayout='column' #f="ngForm">
+                    <mat-form-field>
+                        <input matInput placeholder="Title" type="text" name="TITLE" [(ngModel)]="entry.TITLE" required />
+                        <mat-error>Title is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Description" type="text" name="DESCRIPTION" [(ngModel)]="entry.DESCRIPTION" required />
+                        <mat-error>Description is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea matTextareaAutosize matInput name="CONTENT" placeholder="Content" rows="3" [(ngModel)]="entry.CONTENT" required></textarea>
+                        <mat-error>Content is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Chance Lang" type="text" name="CHANCE_LANG" [(ngModel)]="entry.CHANCE_LANG" required />
+                        <mat-error>Chance Lang is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Type" type="text" name="TYPE" [(ngModel)]="entry.TYPE" required />
+                        <mat-error>Type is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Icon" type="text" name="ICON" [(ngModel)]="entry.ICON" required />
+                        <mat-error>Icon is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea matTextareaAutosize matInput name="LINK" placeholder="Link" rows="3" [(ngModel)]="entry.LINK" required></textarea>
+                        <mat-error>Link is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="date" placeholder="End Date" name="END_DATE" [(ngModel)]="entry.END_DATE" required />
+                        <mat-error>End Date is required</mat-error>
+                    </mat-form-field>
+                    <mat-checkbox color="primary" name="ACTIVE" [(ngModel)]="entry.ACTIVE">Active</mat-checkbox>
+                    <div class="row">
+                        <div class='col col-md-6'>
+                            <button [disabled]='!f.valid' mat-raised-button color='primary' type="button" class="btn btn-outline-secondary btn-block" (click)='Edit(entry)'>Save</button>
+                        </div>
+                        <div class='col col-md-6'>
+                            <button mat-raised-button color='warn' type="button" class="btn btn-outline-danger btn-block" (click)="Delete(entry)">Delete</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

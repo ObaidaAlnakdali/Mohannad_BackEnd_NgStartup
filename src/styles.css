@@ -1,56 +1,74 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  min-height: 100%;
-  position: relative;
-  background-image: url('assets/imgs/bg.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+    min-height: 100%;
+    position: relative;
+    background-image: url('assets/imgs/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 label {
-  /* color:white; */
-  font-size: 16px;
+    /* color:white; */
+    font-size: 16px;
 }
 
 .search_criteria_section {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 4px;
-  margin-top: 4px;
-  /* color:white;    
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 4px;
+    /* color:white;
   background-color: rgba(0,0,0,0.5); */
 }
 
 .entry_section {
-  border: 1px solid black;
-  border-radius: 3px;
-  padding: 10px;
-  margin-top: 10px;
-  /* color:white;    
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 10px;
+    /* color:white;
   background-color: rgba(0,0,0,0.5); */
 }
 
 .entry_section_child {
-  border: 1px solid white;
-  border-radius: 4px;
-  margin: 8px;
-  padding:8px;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 8px;
 }
 
 .container_actions {
-  background-color: #3f51b5;
-  border-radius: 5px;
-  padding: 5px;
+    background-color: #3f51b5;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .vertical_cations {
-  border: 1px solid red;
-  margin-top: 10px;
-  margin-left: 1px;
+    border: 1px solid red;
+    margin-top: 10px;
+    margin-left: 1px;
+}
+
+.mat-tab-label {
+    padding: 0 !important;
+    justify-content: left !important;
+    align-items: center !important;
+}
+
+.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none !important;
+}
+
+button {
+    cursor: pointer !important;
+}
+
+.margin_b {
+    margin-bottom: 40px;
 }
